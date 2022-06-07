@@ -74,25 +74,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*----------------------Обнуление----------------------*/
-:root {
-  --color-melon: #d49082;
-  --color-background: #fff5f5;
-  --color-text: #363331;
-}
-
 body {
-  background-color: var(--color-background);
-}
-
-a {
-  color: var(--color-text);
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-a:hover {
-  color: var(--color-melon);
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  background-color: #fcf7f3;
 }
 
 .header__container {
@@ -118,53 +101,4 @@ a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.header__logo::before {
-  content: "";
-  display: block;
-  position: relative;
-  top: 35px;
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-melon);
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-.header__logo a {
-  font-size: 30px;
-  color: var(--color-text);
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-.header__logo a:hover {
-  color: var(--color-text);
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-
-.header__link {
-  margin: 0 20px;
-}
-.header__link::before {
-  content: "";
-  display: block;
-  position: relative;
-  top: 18px;
-  width: 0%;
-  height: 1px;
-  background-color: var(--color-melon);
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-.header__link:hover::before {
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-  width: 100%;
-}
-.header__link a {
-  text-transform: uppercase;
 }

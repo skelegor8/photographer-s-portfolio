@@ -43,7 +43,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: 400;}
 
 :root{
   --color-melon: #d49082;
-  --color-background: #fff5f5;
+  --color-background: #f8f2f2;
   --color-text: #363331;
   --font-title:  'Roboto', sans-serif;
 }
@@ -134,7 +134,7 @@ a{
   max-width: 100%;
   position: relative;
   margin: auto;
-  height: 550px;
+  height: 600px;
   margin-bottom: 15px;
   overflow: hidden;
 }
@@ -153,8 +153,9 @@ a{
   transition: 1.3s;
   img {
     object-fit: cover;
+    //aspect-ratio: 16 / 9;
     width: 100%;
-    height: 550px;
+    height: 600px;
   }
 }
 .item.slid-index{

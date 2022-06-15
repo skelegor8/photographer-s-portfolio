@@ -45,9 +45,11 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: 400;}
   --color-melon: #d49082;
   --color-background: #fff5f5;
   --color-text: #363331;
+  --font-title:  'Roboto', sans-serif;
 }
 
 body{
+  font-family: var(--font-title);
   background-color: var(--color-background);
 }
 
@@ -82,13 +84,14 @@ a{
     content: '';
     display: block;
     position: relative;
-    top: 35px;
+    top: 38px;
     width: 100%;
-    height: 1px;
+    height: 2px;
     background-color: var(--color-melon);
     transition: 0.5s ease;
   }
   a{
+    font-weight: 300;
     font-size: 30px;
     color: var(--color-text);
     transition: 0.3s ease;
@@ -119,5 +122,109 @@ a{
   }
   a{
     text-transform: uppercase;
+    font-family: var(--font-title);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}
+
+
+/* Собственно сам слайдер */
+.slider{
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  height: 550px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.item__container{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+/* Картинка маштабируется по отношению к родительскому элементу */
+.item{
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  margin-left: 100%;
+  transition: 1.3s;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 550px;
+  }
+}
+.item.slid-index{
+  transition: 1.0s;
+  margin-left: 0;
+  z-index: 5;
+}
+/* Кнопки вперед и назад */
+.prev-btn, .next-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  width: 15%;
+  height: 100%;
+  color: transparent;
+  font-size: 35px;
+  transition: 0.6s ease;
+  z-index: 15;
+  &:hover{
+    background-color: #fff5f56b;
+    color: var(--color-background);
+  }
+}
+.next-btn {
+  right: 0;
+}
+
+/* Анимация слайдов */
+.item.slid-index{
+  animation-name: fade;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-direction: normal;
+}
+
+@keyframes fade {
+  0% {opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.main__title{
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span{
+    font-weight: 300;
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: var(--color-text);
+    &::after,
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: var(--color-melon);
+      width: 20%;
+      height: 2px;
+    }
+    &::after{
+      top: 50%;
+      left: 20%;
+    }
+    &::before{
+      top: 50%;
+      right: 20%;
+    }
   }
 }

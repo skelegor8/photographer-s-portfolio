@@ -78,9 +78,11 @@ h1, h2, h3, h4, h5, h6 {
   --color-melon: #d49082;
   --color-background: #fff5f5;
   --color-text: #363331;
+  --font-title: "Roboto", sans-serif;
 }
 
 body {
+  font-family: var(--font-title);
   background-color: var(--color-background);
 }
 
@@ -127,14 +129,15 @@ a:hover {
   content: "";
   display: block;
   position: relative;
-  top: 35px;
+  top: 38px;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: var(--color-melon);
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 .header__logo a {
+  font-weight: 300;
   font-size: 30px;
   color: var(--color-text);
   -webkit-transition: 0.3s ease;
@@ -167,4 +170,146 @@ a:hover {
 }
 .header__link a {
   text-transform: uppercase;
+  font-family: var(--font-title);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* Собственно сам слайдер */
+.slider {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  height: 550px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.item__container {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* Картинка маштабируется по отношению к родительскому элементу */
+.item {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  margin-left: 100%;
+  -webkit-transition: 1.3s;
+  transition: 1.3s;
+}
+.item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 550px;
+}
+
+.item.slid-index {
+  -webkit-transition: 1s;
+  transition: 1s;
+  margin-left: 0;
+  z-index: 5;
+}
+
+/* Кнопки вперед и назад */
+.prev-btn, .next-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  width: 15%;
+  height: 100%;
+  color: transparent;
+  font-size: 35px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  z-index: 15;
+}
+.prev-btn:hover, .next-btn:hover {
+  background-color: rgba(255, 245, 245, 0.4196078431);
+  color: var(--color-background);
+}
+
+.next-btn {
+  right: 0;
+}
+
+/* Анимация слайдов */
+.item.slid-index {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.main__title {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.main__title span {
+  font-weight: 300;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: var(--color-text);
+}
+.main__title span::after, .main__title span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--color-melon);
+  width: 20%;
+  height: 2px;
+}
+.main__title span::after {
+  top: 50%;
+  left: 20%;
+}
+.main__title span::before {
+  top: 50%;
+  right: 20%;
 }

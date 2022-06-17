@@ -113,18 +113,6 @@ a:hover {
           align-items: center;
 }
 
-.header__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .header__logo::before {
   content: "";
   display: block;
@@ -147,6 +135,18 @@ a:hover {
   color: var(--color-text);
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+}
+
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__link {
@@ -175,12 +175,12 @@ a:hover {
   letter-spacing: 1px;
 }
 
-/* Собственно сам слайдер */
+/*Тело слайдера слайдер */
 .slider {
   max-width: 100%;
   position: relative;
   margin: auto;
-  height: 600px;
+  height: 650px;
   margin-bottom: 15px;
   overflow: hidden;
 }
@@ -208,7 +208,7 @@ a:hover {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  height: 600px;
+  height: 650px;
 }
 
 .item.slid-index {
@@ -280,6 +280,7 @@ a:hover {
 }
 .main__title {
   width: 100%;
+  margin: 20px 0;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -312,4 +313,165 @@ a:hover {
 .main__title span::before {
   top: 50%;
   right: 20%;
+}
+
+.gallery__container {
+  width: 100%;
+  height: 700px;
+}
+
+footer {
+  border-top: 2px solid var(--color-melon);
+}
+
+.footer__container {
+  width: 100%;
+  height: 100%;
+  padding: 30px 0 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__menu {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__contacts {
+  margin: 0 15px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__mail,
+.footer__phone {
+  margin: 8px 0;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.footer__mail::before,
+.footer__phone::before {
+  content: "";
+  display: block;
+  position: relative;
+  top: 18px;
+  width: 0%;
+  height: 1px;
+  background-color: var(--color-melon);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.footer__mail:hover::before,
+.footer__phone:hover::before {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  width: 100%;
+}
+
+.footer__social-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__social-item {
+  margin: 0 0 0 30px;
+  padding: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 2px solid var(--color-background);
+  border-radius: 50%;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.footer__social-item:hover {
+  border: 2px solid var(--color-melon);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.footer-inst,
+.footer-teleg {
+  display: block;
+  width: 35px;
+  height: 35px;
+  -webkit-filter: brightness(0) saturate(100%) invert(7%) sepia(2%) saturate(3887%) hue-rotate(340deg) brightness(103%) contrast(70%);
+          filter: brightness(0) saturate(100%) invert(7%) sepia(2%) saturate(3887%) hue-rotate(340deg) brightness(103%) contrast(70%);
+  background-image: url(../../../assets/svg/icon-instagram.svg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.footer-inst:hover,
+.footer-teleg:hover {
+  -webkit-filter: brightness(0) saturate(100%) invert(85%) sepia(24%) saturate(3776%) hue-rotate(306deg) brightness(102%) contrast(67%);
+          filter: brightness(0) saturate(100%) invert(85%) sepia(24%) saturate(3776%) hue-rotate(306deg) brightness(102%) contrast(67%);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.footer-teleg {
+  background-image: url(../../../assets/svg/icon-telegram.svg);
+}
+
+.header__link.footer__position {
+  margin: 0 20px 0 0;
+}
+
+.footer__copirate {
+  margin: 20px 0 0 0;
+}
+.footer__copirate span {
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.footer__dev-info {
+  margin: 20px 0 0 0;
+}
+.footer__dev-info a {
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 1px;
 }

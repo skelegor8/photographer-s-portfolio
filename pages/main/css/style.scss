@@ -1,0 +1,353 @@
+/*----------------------Обнуление----------------------*/
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,*:before,*:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active{outline: none;}
+a:focus, a:active{outline: none;}
+
+nav, footer, header, aside{display: block;}
+
+html, body{
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+input, button, textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: 400;}
+/*----------------------Обнуление----------------------*/
+
+:root{
+  --color-melon: #d49082;
+  --color-background: #f8f2f2;
+  --color-text: #363331;
+  --font-title:  'Roboto', sans-serif;
+}
+
+body{
+  font-family: var(--font-title);
+  background-color: var(--color-background);
+}
+
+a{
+  color: var(--color-text);
+  transition: 0.3s ease;
+  &:hover{
+    color: var(--color-melon);
+    transition: 0.3s ease;
+  }
+}
+
+.header__container{
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo{
+  &::before{
+    content: '';
+    display: block;
+    position: relative;
+    top: 38px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-melon);
+    transition: 0.5s ease;
+  }
+  a{
+    font-weight: 300;
+    font-size: 30px;
+    color: var(--color-text);
+    transition: 0.3s ease;
+    &:hover{
+      color: var(--color-text);
+      transition: 0.3s ease;
+    }
+  }
+}
+
+.header__menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__link{
+  margin: 0 20px;
+  &::before{
+    content: '';
+    display: block;
+    position: relative;
+    top: 18px;
+    width: 0%;
+    height: 1px;
+    background-color: var(--color-melon);
+    transition: 0.5s ease;
+  }
+  &:hover{
+    &::before{
+      transition: 0.5s ease;
+      width: 100%;
+    }
+  }
+  a{
+    text-transform: uppercase;
+    font-family: var(--font-title);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}
+
+
+/*Тело слайдера слайдер */
+.slider{
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  height: 650px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.item__container{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+/* Картинка маштабируется по отношению к родительскому элементу */
+.item{
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  margin-left: 100%;
+  transition: 1.3s;
+  img {
+    object-fit: cover;
+    //aspect-ratio: 16 / 9;
+    width: 100%;
+    height: 650px;
+  }
+}
+.item.slid-index{
+  transition: 1.0s;
+  margin-left: 0;
+  z-index: 5;
+}
+/* Кнопки вперед и назад */
+.prev-btn, .next-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  width: 15%;
+  height: 100%;
+  color: transparent;
+  font-size: 35px;
+  transition: 0.6s ease;
+  z-index: 15;
+  &:hover{
+    background-color: #fff5f56b;
+    color: var(--color-background);
+  }
+}
+.next-btn {
+  right: 0;
+}
+
+/* Анимация слайдов */
+.item.slid-index{
+  animation-name: fade;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-direction: normal;
+}
+
+@keyframes fade {
+  0% {opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.main__title{
+  width: 100%;
+  margin: 20px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span{
+    font-weight: 300;
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: var(--color-text);
+    &::after,
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: var(--color-melon);
+      width: 20%;
+      height: 2px;
+    }
+    &::after{
+      top: 50%;
+      left: 20%;
+    }
+    &::before{
+      top: 50%;
+      right: 20%;
+    }
+  }
+}
+
+.gallery__container{
+  width: 100%;
+  height: 700px;
+}
+
+
+footer{
+  border-top: 2px solid var(--color-melon);
+}
+
+.footer__container{
+  width: 100%;
+  height: 100%;
+  padding: 30px 0 15px 0;
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+}
+
+.footer__menu{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__contacts{
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+}
+
+.footer__mail,
+.footer__phone{
+  margin: 8px 0;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-transform: uppercase;
+    &::before{
+      content: '';
+      display: block;
+      position: relative;
+      top: 18px;
+      width: 0%;
+      height: 1px;
+      background-color: var(--color-melon);
+      transition: 0.5s ease;
+    }
+    &:hover{
+      &::before{
+        transition: 0.5s ease;
+        width: 100%;
+      }
+    }
+  }
+
+
+.footer__social-list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__social-item{
+  margin: 0 0 0 30px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-background);
+  border-radius: 50%;
+  transition: 0.5s ease;
+  &:hover{
+    border: 2px solid var(--color-melon);
+    transition: 0.5s ease;
+  }
+}
+
+
+.footer-inst,
+.footer-teleg{
+  display: block;
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) saturate(100%) invert(7%) sepia(2%) saturate(3887%) hue-rotate(340deg) brightness(103%) contrast(70%);
+  background-image: url(../../../assets/svg/icon-instagram.svg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  transition: 0.5s ease;
+  &:hover{
+    filter: brightness(0) saturate(100%) invert(85%) sepia(24%) saturate(3776%) hue-rotate(306deg) brightness(102%) contrast(67%);
+    transition: 0.5s ease;
+  }
+}
+.footer-teleg{
+  background-image: url(../../../assets/svg/icon-telegram.svg);
+}
+
+.header__link.footer__position{
+  margin: 0 20px 0 0;
+}
+
+.footer__copirate{
+  margin: 20px 0 0 0;
+  span{
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+}
+
+.footer__dev-info{
+  margin: 20px 0 0 0;
+  a{
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+}

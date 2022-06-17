@@ -147,11 +147,9 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 0 20px;
 }
 
-.header__link {
-  margin: 0 20px;
-}
 .header__link::before {
   content: "";
   display: block;
@@ -317,7 +315,7 @@ a:hover {
 
 .gallery__container {
   width: 100%;
-  height: 700px;
+  height: 100px;
 }
 
 footer {
@@ -351,10 +349,14 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  gap: 0 20%;
+}
+
+.footer__menu-item {
+  width: 180px;
 }
 
 .footer__contacts {
-  margin: 0 15px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -400,13 +402,13 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .footer__social-item {
-  margin: 0 0 0 30px;
+  cursor: pointer;
   padding: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -427,6 +429,13 @@ footer {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
+.footer__social-item:hover .footer-inst,
+.footer__social-item:hover .footer-teleg {
+  -webkit-filter: brightness(0) saturate(100%) invert(85%) sepia(24%) saturate(3776%) hue-rotate(306deg) brightness(102%) contrast(67%);
+          filter: brightness(0) saturate(100%) invert(85%) sepia(24%) saturate(3776%) hue-rotate(306deg) brightness(102%) contrast(67%);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
 
 .footer-inst,
 .footer-teleg {
@@ -442,20 +451,9 @@ footer {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.footer-inst:hover,
-.footer-teleg:hover {
-  -webkit-filter: brightness(0) saturate(100%) invert(85%) sepia(24%) saturate(3776%) hue-rotate(306deg) brightness(102%) contrast(67%);
-          filter: brightness(0) saturate(100%) invert(85%) sepia(24%) saturate(3776%) hue-rotate(306deg) brightness(102%) contrast(67%);
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
 
 .footer-teleg {
   background-image: url(../../../assets/svg/icon-telegram.svg);
-}
-
-.header__link.footer__position {
-  margin: 0 20px 0 0;
 }
 
 .footer__copirate {

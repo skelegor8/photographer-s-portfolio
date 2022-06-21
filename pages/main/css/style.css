@@ -296,7 +296,8 @@ a:hover {
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 0.5px;
-  text-align: justify;
+  text-align: center;
+  line-height: 30px;
 }
 
 .main__title {

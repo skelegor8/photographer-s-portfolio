@@ -127,101 +127,7 @@ a{
   }
 }
 
-//------------main------------
-
-/*Тело слайдера*/
-.slider{
-  max-width: 100%;
-  position: relative;
-  margin: auto;
-  height: 650px;
-  margin-bottom: 15px;
-  overflow: hidden;
-}
-
-.item__container{
-  position: relative;
-  align-items: center;
-  justify-content: center;
-}
-/* Картинка маштабируется по отношению к родительскому элементу */
-.item{
-  width: 100%;
-  position: absolute;
-  z-index: 0;
-  margin-left: 100%;
-  transition: 1.3s;
-  img {
-    object-fit: cover;
-    //aspect-ratio: 16 / 9;
-    width: 100%;
-    height: 650px;
-  }
-}
-.item.slid-index{
-  transition: 1.0s;
-  margin-left: 0;
-  z-index: 5;
-}
-/* Кнопки вперед и назад */
-.prev-btn, .next-btn{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: absolute;
-  top: 0%;
-  width: 15%;
-  height: 100%;
-  color: transparent;
-  font-size: 35px;
-  transition: 0.6s ease;
-  z-index: 15;
-  &:hover{
-    background-color: #fff5f56b;
-    color: var(--color-background);
-  }
-}
-.next-btn {
-  right: 0;
-}
-
-/* Анимация слайдов */
-.item.slid-index{
-  animation-name: fade;
-  animation-duration: 3s;
-  animation-timing-function: ease-out;
-  animation-direction: normal;
-}
-
-@keyframes fade {
-  0% {opacity: 0;}
-  100%{opacity: 1;}
-}
-
-.section__text{
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.container__text-main{
-  width: 50%;
-  margin: 40px auto;
-  color: var(--color-text);
-  h2{
-    font-weight: 300;
-    font-size: 25px;
-    text-align: center;
-  }
-  p{
-    margin: 20px 0 0 0;
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    text-align: center;
-    line-height: 30px;
-  }
-}
+//-----------main------------
 
 .main__title{
   margin: 20px 0;
@@ -266,9 +172,8 @@ a{
 .gallery__items-list{
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
 }
 .gallery__item-link{
   display: block;
@@ -305,7 +210,7 @@ a{
   object-fit: cover;
   aspect-ratio: 16 / 9;
   width: 100%;
-  height: 300px;
+  height: 400px;
 }
 
 .gallery__item-modal{
@@ -319,13 +224,25 @@ a{
   border-top: 2px solid var(--color-melon);
   h3{
     display: none;
-    margin: 6px;
+    margin: 10px;
     font-size: 18px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.4s ease;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //----------footer------------
@@ -492,10 +409,6 @@ footer{
 }
 
 @media (max-width: 1023px){
-  .gallery__items-list{
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
   .footer__menu{
     flex-direction:column;
     gap: 25px 0;
@@ -515,6 +428,5 @@ footer{
   }
   .gallery__items-list{
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }

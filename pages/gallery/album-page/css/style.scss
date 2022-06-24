@@ -262,8 +262,7 @@ a{
 
 
 .title__container{
-  margin: 20px auto 10px auto;
-  width: calc(100% - 10px);
+  margin: 20px 0 10px 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -308,19 +307,16 @@ a{
 
 .album__items-list{
   width: 100%;
- /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;*/
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .column {
-  flex: 50%;
   max-width: 50%;
+  margin: 5px;
 }
 .album__item{
   position: relative;
-  margin: 5px;
+  margin: 8px 0 0 0;
   vertical-align: middle;
   cursor: pointer;
   transition: 0.4s ease;
@@ -331,12 +327,8 @@ a{
 }
 
 .album__img{
-  margin-top: 8px;
-
   vertical-align: middle;
-  //object-fit: cover;
   width: 100%;
- // height: 400px;
 }
 
 
@@ -505,11 +497,10 @@ a{
 }
 
 @media (max-width: 1023px){
-  /*.album__items-list{
-    grid-template-columns: 1fr;
-  }*/
+  .album__items-list{
+    flex-direction: column;
+  }
   .column{
-    flex: 100%;
     max-width: 100%;
   }
   .footer__menu{

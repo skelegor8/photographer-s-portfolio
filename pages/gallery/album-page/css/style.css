@@ -329,8 +329,7 @@ a:hover {
 }
 
 .title__container {
-  margin: 20px auto 10px auto;
-  width: calc(100% - 10px);
+  margin: 20px 0 10px 0;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -380,26 +379,22 @@ a:hover {
 
 .album__items-list {
   width: 100%;
-  /* display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 25px;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .column {
-  -webkit-box-flex: 50%;
-      -ms-flex: 50%;
-          flex: 50%;
   max-width: 50%;
+  margin: 5px;
 }
 
 .album__item {
   position: relative;
-  margin: 5px;
+  margin: 8px 0 0 0;
   vertical-align: middle;
   cursor: pointer;
   -webkit-transition: 0.4s ease;
@@ -413,7 +408,6 @@ a:hover {
 }
 
 .album__img {
-  margin-top: 8px;
   vertical-align: middle;
   width: 100%;
 }
@@ -623,13 +617,14 @@ a:hover {
   }
 }
 @media (max-width: 1023px) {
-  /*.album__items-list{
-    grid-template-columns: 1fr;
-  }*/
+  .album__items-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
   .column {
-    -webkit-box-flex: 100%;
-        -ms-flex: 100%;
-            flex: 100%;
     max-width: 100%;
   }
 

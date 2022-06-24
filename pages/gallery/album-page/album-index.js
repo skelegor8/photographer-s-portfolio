@@ -11,6 +11,9 @@ const nextSliderBtn = document.querySelector(".next-btn");
 const prevSliderBtn = document.querySelector(".prev-btn");
 const closeBtn = document.querySelector('.close-btn');
 
+const title = document.querySelector('.title');
+
+title.innerHTML = localStorage.getItem("title");
 albumImg.forEach((img, index) => img.src = `../../../assets/img/gallery/${localStorage.getItem("dataWeddings")}/item-${index + 1}.jpg`);
 sliderImg.forEach((img, index) => img.src = `../../../assets/img/gallery/${localStorage.getItem("dataWeddings")}/item-${index + 1}.jpg`);
 /*for (let i = 0; i < 3; i++){

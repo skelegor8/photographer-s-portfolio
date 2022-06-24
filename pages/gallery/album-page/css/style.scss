@@ -51,6 +51,9 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: 400;}
 body{
   font-family: var(--font-title);
   background-color: var(--color-background);
+  &.active{
+    overflow: hidden;
+  }
 }
 
 a{
@@ -129,6 +132,136 @@ a{
 
 //-----------main------------
 
+
+
+.section__slider{
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-background);
+  z-index: 10;
+  &.active{
+    display: block;
+  }
+}
+.close-btn{
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 99;
+  opacity: 0.5;
+  transition: 0.3s ease;
+  &::before,
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text);
+  }
+  &::before{
+    transform: rotate(45deg);
+  }
+  &::after{
+    transform: rotate(-45deg);
+  }
+  &:hover{
+    opacity: 0.9; 
+    transition: 0.3s ease;
+  }
+  &:active{
+    transform: scale(0.9);
+    transition: 0.3s ease;
+  }
+  &.active{
+    display: block;
+  }
+}
+
+.slider__container{
+  display: none;
+  position: relative;
+  margin: 100px 0;
+  &.active{
+    display: block;
+  }
+}
+
+.slider__list{
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 700px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  z-index: 5;
+  transition: 0.3s ease;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  &.active{
+    display: flex;
+  }
+}
+.slider__item{
+  display: none;
+  position: absolute;
+  transition: 1.3s;
+  cursor: default;
+  &:hover,
+  &:active{
+    transform: scale(1);
+  }
+  &.slid-index{
+    transition: 1.0s;
+    z-index: 5;
+  }
+  &.active{
+    display: block;
+  }
+}
+.slider__img{
+  display: none;
+  object-fit: contain;
+  height: 700px;
+  &.active{
+    display: block;
+   }
+}
+.prev-btn, .next-btn{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  width: 15%;
+  height: 100%;
+  color: transparent;
+  font-size: 35px;
+  transition: 0.6s ease;
+  z-index: 15;
+  &:hover{
+    background-color: #3633312a;
+    color: var(--color-text);
+  }
+  &.active{
+    display: flex;
+  }
+}
+.next-btn {
+  right: 0;
+}
+
+
 .main__title{
   margin: 20px 0;
   position: relative;
@@ -163,27 +296,24 @@ a{
   }
 }
 
-.section__gallery{
+.section__album{
   max-width: 1400px;
   margin: 20px auto;
+
+}
+.album__container{
+  transition: 0.3s ease;
+
 }
 
-
-.gallery__items-list{
+.album__items-list{
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   gap: 25px;
 }
-.gallery__item-link{
-  display: block;
-  &:hover{
-    color: var(--color-text);
-  }
-}
 
-.gallery__item{
+.album__item{
   position: relative;
   cursor: pointer;
   transition: 0.4s ease;
@@ -197,26 +327,16 @@ a{
   }
 }
 
-.gallery__img{
+.album__img{
   object-fit: cover;
-  aspect-ratio: 16 / 9;
   width: 100%;
   height: 400px;
 }
 
 
 
-
-
-
-
-
-
-
-
-
 //----------footer------------
-footer{
+.footer{
   border-top: 2px solid var(--color-melon);
 }
 
@@ -336,14 +456,14 @@ footer{
   width: 35px;
   height: 35px;
   filter: brightness(0) saturate(100%) invert(7%) sepia(2%) saturate(3887%) hue-rotate(340deg) brightness(103%) contrast(70%);
-  background-image: url(../../../assets/svg/icon-instagram.svg);
+  background-image: url(../../../../assets/svg/icon-instagram.svg);
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 100% auto;
   transition: 0.5s ease;
 }
 .footer-teleg{
-  background-image: url(../../../assets/svg/icon-telegram.svg);
+  background-image: url(../../../../assets/svg/icon-telegram.svg);
 }
 
 

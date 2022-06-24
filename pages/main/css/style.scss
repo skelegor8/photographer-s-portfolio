@@ -496,6 +496,15 @@ footer{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
+  .gallery__item-modal{
+    opacity: 1;
+    height: 10%;
+    transition: 0.4s ease;
+    h3{
+      display: block;
+      transition: 0.4s ease;
+    }
+  }
   .footer__menu{
     flex-direction:column;
     gap: 25px 0;

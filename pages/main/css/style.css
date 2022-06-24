@@ -687,6 +687,18 @@ footer {
     -ms-grid-column: 2;
   }
 
+  .gallery__item-modal {
+    opacity: 1;
+    height: 10%;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+  }
+  .gallery__item-modal h3 {
+    display: block;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+  }
+
   .footer__menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

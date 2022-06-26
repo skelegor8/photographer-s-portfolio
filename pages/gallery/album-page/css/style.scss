@@ -310,7 +310,8 @@ a{
   display: flex;
   justify-content: space-between;
 }
-.column {
+.column-1,
+.column-2 {
   max-width: 50%;
   margin: 5px;
 }

@@ -2,11 +2,10 @@ const body = document.querySelector('body');
 const sectionSlider = document.querySelector('.section__slider');
 const sliderContainer = document.querySelector('.slider__container');
 const sliderList = document.querySelector('.slider__list');
-const sliderItem = document.querySelectorAll('.slider__item');
-const sliderImg = document.querySelectorAll('.slider__img');
 
-const albumItem = document.querySelectorAll('.album__item');
-const albumImg = document.querySelectorAll('.album__img');
+const column_1 = document.querySelector('.column-1');
+const column_2 = document.querySelector('.column-2');
+
 const nextSliderBtn = document.querySelector(".next-btn");
 const prevSliderBtn = document.querySelector(".prev-btn");
 const closeBtn = document.querySelector('.close-btn');
@@ -14,16 +13,58 @@ const closeBtn = document.querySelector('.close-btn');
 const title = document.querySelector('.title');
 
 title.innerHTML = localStorage.getItem("title");
-albumImg.forEach((img, index) => img.src = `../../../assets/img/gallery/${localStorage.getItem("dataWeddings")}/item-${index + 1}.jpg`);
-sliderImg.forEach((img, index) => img.src = `../../../assets/img/gallery/${localStorage.getItem("dataWeddings")}/item-${index + 1}.jpg`);
-/*for (let i = 0; i < 3; i++){
-  const img = document.createElement('img');
-  img.classList.add('album__img')
-  img.src = `../../../assets/img/gallery/${localStorage.getItem("dataWeddings")}/item-${i + 1}.jpg`;
-  img.alt = 'image';
-  albumItemsList.append(img);
-}
-*/
+//albumImg.forEach((img, index) => img.src = `../../../assets/img/gallery/${localStorage.getItem("dataWeddings")}/item-${index + 1}.jpg`);
+//sliderImg.forEach((img, index) => img.src = `../../../assets/img/gallery/${localStorage.getItem("dataWeddings")}/item-${index + 1}.jpg`);
+
+    for (let i = 0; i < 10; i++){
+      const div = document.createElement('div');
+      div.classList.add('slider__item')
+      sliderList.append(div);
+      const img = document.createElement('img');
+      img.classList.add('slider__img')
+      img.src = `../../../assets/img/gallery/${localStorage.getItem("dataWeddings")}/item-${i + 1}.jpg`;
+      img.onerror = function (){
+        
+      }
+      img.alt = 'image';
+      div.append(img);
+  }
+  for (let i = 0; i < 10; i++) {
+    if (i % 2) {
+        const div = document.createElement('div');
+        div.classList.add('album__item')
+        column_2.append(div);
+        const img = document.createElement('img');
+        img.classList.add('album__img');
+      img.src = `../../../assets/img/gallery/${localStorage.getItem("dataWeddings")}/item-${i + 1}.jpg`;
+      img.onerror = function (){
+        stop
+      }
+        img.alt = 'image';
+        div.append(img);
+    } else {
+        const div = document.createElement('div');
+        div.classList.add('album__item')
+        column_1.append(div);
+        const img = document.createElement('img');
+        img.classList.add('album__img')
+      img.src = `../../../assets/img/gallery/${localStorage.getItem("dataWeddings")}/item-${i + 1}.jpg`;
+      img.onerror = function (){
+        stop  
+      }
+        img.alt = 'image';
+        div.append(img);
+    }
+  }
+
+
+
+const sliderItem = document.querySelectorAll('.slider__item');
+const sliderImg = document.querySelectorAll('.slider__img');
+
+const albumItem = document.querySelectorAll('.album__item');
+const albumImg = document.querySelectorAll('.album__img');
+
 
 albumItem.forEach((albumItem, index) => {
   albumItem.addEventListener('click', () => {

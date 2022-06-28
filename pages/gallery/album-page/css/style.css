@@ -278,7 +278,7 @@ a:hover {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
-.slider__item.slid-index {
+.slider__item.active {
   -webkit-transition: 1s;
   transition: 1s;
   z-index: 5;
@@ -382,14 +382,16 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .column-1,
-.column-2 {
-  max-width: 50%;
+.column-2,
+.column-3,
+.column-4 {
+  max-width: 25%;
   margin: 5px;
 }
 
@@ -625,7 +627,8 @@ a:hover {
             flex-direction: column;
   }
 
-  .column {
+  .column-1,
+.column-2 {
     max-width: 100%;
   }
 

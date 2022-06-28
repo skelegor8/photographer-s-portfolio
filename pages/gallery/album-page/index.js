@@ -18,7 +18,7 @@ const title = document.querySelector('.title');
 title.innerHTML = localStorage.getItem("title");
 
 async function populate() {
-  const requestURL = '../../imgUrls.json';
+  const requestURL = ' ../../../pages/imgUrls.json';
   const request = new Request(requestURL);
 
   const response = await fetch(request);

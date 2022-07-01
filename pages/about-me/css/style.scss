@@ -41,3 +41,274 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: 400;}
 /*----------------------Обнуление----------------------*/
 
+:root{
+  --color-melon: #d49082;
+  --color-background: #f8f2f2;
+  --color-text: #363331;
+  --font-title:  'Roboto', sans-serif;
+}
+
+body{
+  font-family: var(--font-title);
+  background-color: var(--color-background);
+}
+
+a{
+  color: var(--color-text);
+  transition: 0.3s ease;
+  &:hover{
+    color: var(--color-melon);
+    transition: 0.3s ease;
+  }
+}
+
+.header__container{
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo{
+  &::before{
+    content: '';
+    display: block;
+    position: relative;
+    top: 38px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-melon);
+    transition: 0.5s ease;
+  }
+  a{
+    font-weight: 300;
+    font-size: 30px;
+    color: var(--color-text);
+    transition: 0.3s ease;
+    &:hover{
+      color: var(--color-text);
+      transition: 0.3s ease;
+    }
+  }
+}
+.header__menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 20px;
+}
+.header__link{
+  &::before{
+    content: '';
+    display: block;
+    position: relative;
+    top: 18px;
+    width: 0%;
+    height: 1px;
+    background-color: var(--color-melon);
+    transition: 0.5s ease;
+  }
+  &:hover{
+    &::before{
+      transition: 0.5s ease;
+      width: 100%;
+    }
+  }
+  a{
+    text-transform: uppercase;
+    font-family: var(--font-title);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}
+//----------main------------
+.about-me__container{
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+
+
+
+//----------footer------------
+footer{
+  border-top: 2px solid var(--color-melon);
+}
+
+.footer__container{
+  max-width: 1400px;
+  height: 100%;
+  padding: 30px 0 15px 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+}
+
+.footer__menu{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 20%;
+}
+
+.sitemap__menu{
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+}
+
+.sitemap__link{
+  &::before{
+    content: '';
+    display: block;
+    position: relative;
+    top: 18px;
+    width: 0%;
+    height: 1px;
+    background-color: var(--color-melon);
+    transition: 0.5s ease;
+  }
+  &:hover{
+    &::before{
+      transition: 0.5s ease;
+      width: 100%;
+    }
+  }
+  a{
+    text-transform: uppercase;
+    font-family: var(--font-title);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}
+
+.footer__menu-item{
+  width: 180px;
+}
+
+.footer__contacts{
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+}
+
+.footer__mail,
+.footer__phone{
+  margin: 8px 0;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-transform: uppercase;
+    &::before{
+      content: '';
+      display: block;
+      position: relative;
+      top: 18px;
+      width: 0%;
+      height: 1px;
+      background-color: var(--color-melon);
+      transition: 0.5s ease;
+    }
+    &:hover{
+      &::before{
+        transition: 0.5s ease;
+        width: 100%;
+      }
+    }
+  }
+
+
+.footer__social-list{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0 20px;
+}
+
+.footer__social-item{
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-background);
+  border-radius: 50%;
+  transition: 0.5s ease;
+  &:hover{
+    border: 2px solid var(--color-melon);
+    transition: 0.5s ease;
+    .footer-inst,
+    .footer-teleg{
+      filter: brightness(0) saturate(100%) invert(85%) sepia(24%) saturate(3776%) hue-rotate(306deg) brightness(102%) contrast(67%);
+      transition: 0.5s ease;
+    }
+  }
+}
+  .footer-inst,
+  .footer-teleg{
+  display: block;
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) saturate(100%) invert(7%) sepia(2%) saturate(3887%) hue-rotate(340deg) brightness(103%) contrast(70%);
+  background-image: url(../../../assets/svg/icon-instagram.svg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  transition: 0.5s ease;
+}
+.footer-teleg{
+  background-image: url(../../../assets/svg/icon-telegram.svg);
+}
+
+.footer__copirate{
+  margin: 20px 0 0 0;
+  span{
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+}
+
+.footer__dev-info{
+  margin: 20px 0 0 0;
+  a{
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 1439px){
+  .main__title{
+    margin: 20px;
+  }
+
+  .footer__menu{
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1023px){
+
+  .footer__menu{
+    flex-direction:column;
+    gap: 25px 0;
+  }
+  .sitemap__menu{
+    justify-content: center;
+  }
+  .footer__social-list{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px){
+  .header__container{
+    flex-direction:column;
+    margin: 20px 0;
+  }
+}

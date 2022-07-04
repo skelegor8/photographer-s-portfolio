@@ -124,11 +124,41 @@ a{
   }
 }
 //----------main------------
-.about-me__container{
-  max-width: 1400px;
-  margin: 0 auto;
+.about-me{
+  margin: 40px 0;
 }
-
+.about-me__container{
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about-me__foto{
+  margin: 0 20px;
+  img{
+    object-fit: contain;
+   
+    max-width: 400px;
+    height:auto;
+  }
+}
+.about-me__text{
+  margin: 0 20px;
+  h2{
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+  }
+  p{
+    margin: 10px 0;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    line-height: 20px;
+  }
+}
 
 
 
@@ -307,6 +337,17 @@ footer{
 }
 
 @media (max-width: 767px){
+  .about-me__container{
+    flex-direction:column;
+  }
+  .about-me__foto{
+    img{
+      width: 100%;
+    }
+  }
+  .about-me__text{
+    text-align: center;
+  }
   .header__container{
     flex-direction:column;
     margin: 20px 0;

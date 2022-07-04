@@ -173,9 +173,49 @@ a:hover {
   letter-spacing: 1px;
 }
 
+.about-me {
+  margin: 40px 0;
+}
+
 .about-me__container {
-  max-width: 1400px;
+  max-width: 1024px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about-me__foto {
+  margin: 0 20px;
+}
+.about-me__foto img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 400px;
+  height: auto;
+}
+
+.about-me__text {
+  margin: 0 20px;
+}
+.about-me__text h2 {
+  margin: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+}
+.about-me__text p {
+  margin: 10px 0;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  line-height: 20px;
 }
 
 footer {
@@ -400,6 +440,21 @@ footer {
   }
 }
 @media (max-width: 767px) {
+  .about-me__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .about-me__foto img {
+    width: 100%;
+  }
+
+  .about-me__text {
+    text-align: center;
+  }
+
   .header__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
